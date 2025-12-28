@@ -1,0 +1,57 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.content {
+  text-align: center;
+  color: white;
+}
+
+.logo {
+  font-size: 48px;
+  letter-spacing: 8px;
+  font-weight: 600;
+}
+
+.line {
+  width: 120px;
+  height: 2px;
+  background: white;
+  margin: 24px auto;
+  animation: loading 1.5s infinite ease-in-out;
+}
+
+.content p {
+  font-size: 14px;
+  opacity: 0.7;
+  letter-spacing: 2px;
+}
+
+@keyframes loading {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}

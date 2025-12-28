@@ -1,0 +1,44 @@
+.section {
+  background: #f7f7f7;
+}
+
+/* велике зображення */
+.mainSlider img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+/* thumbnails */
+.thumbs {
+  margin-top: 16px;
+}
+
+.thumbs img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.thumbs :global(.swiper-slide-thumb-active) img {
+  opacity: 1;
+  outline: 2px solid #000;
+}
+
+@media (max-width: 1024px) {
+  .mainSlider img {
+    height: 525px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainSlider img {
+    height: 450px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+}

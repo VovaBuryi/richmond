@@ -1,0 +1,30 @@
+/* обгортка SVG */
+.svgWrapper {
+  width: 100%;
+}
+
+/* сам SVG */
+.svg {
+  width: 100%;
+  height: auto;
+  display: block; /* дуже важливо */
+  /* border-radius: 50px; */
+}
+
+/* клікабельні будинки */
+.house {
+  fill: transparent;
+  cursor: pointer;
+  transition: fill 0.2s ease;
+}
+
+.house:hover {
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+/* інформаційний блок */
+.info {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 18px;
+}

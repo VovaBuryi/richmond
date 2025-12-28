@@ -1,0 +1,26 @@
+.genplan {
+  padding: 60px 0;
+  background: #fff;
+}
+
+/* обгортка SVG */
+.svgWrapper {
+  width: 100%;
+}
+
+/* клікабельні будинки */
+.house {
+  fill: transparent;
+  cursor: pointer;
+  transition: fill 0.2s ease;
+}
+
+.house:hover {
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+  iframe {
+    height: 500px;
+  }
+}
