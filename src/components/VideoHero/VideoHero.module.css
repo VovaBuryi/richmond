@@ -53,3 +53,9 @@
     height: 65vh;
   }
 }
+
+@media (max-width: 768px) {
+  .hero {
+    height: 28vh;
+  }
+}
