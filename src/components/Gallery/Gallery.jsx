@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Thumbs, Autoplay } from 'swiper/modules';
+import img1 from '../../assets/gallery/1.jpg';
+import img2 from '../../assets/gallery/2.jpg';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -9,7 +11,7 @@ import 'swiper/css/thumbs';
 import styles from './Gallery.module.css';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
-const images = ['/gallery/1.jpg', '/gallery/2.jpg'];
+const images = [img1, img2];
 
 const Gallery = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
