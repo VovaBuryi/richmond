@@ -9,7 +9,7 @@ import 'swiper/css/thumbs';
 import styles from './Gallery.module.css';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
-const images = ['@/assets/gallery/1.jpg', '@/assets/gallery/2.jpg'];
+const images = ['/gallery/1.jpg', '/gallery/2.jpg'];
 
 const Gallery = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
