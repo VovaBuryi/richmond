@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "price": 1450000,
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "sqft": 2998
+  },
+  {
+    "id": 2,
+    "price": 1100000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "sqft": 2447
+  },
+  {
+    "id": 3,
+    "price": 1300000,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "sqft": 2856
+  }
+]

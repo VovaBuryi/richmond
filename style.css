@@ -560,6 +560,6 @@ body {
   }
 
   .section {
-    padding-bottom: 0px;
+    padding: 20px 0;
   }
 }

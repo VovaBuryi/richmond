@@ -1,23 +1,23 @@
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import VideoHero from './components/VideoHero/VideoHero';
-import Genplan from './components/Genplan/Genplan';
-import AboutLocation from './components/AboutLocation/AboutLocation';
-import Gallery from './components/Gallery/Gallery';
-import VRTour from './components/VRTour/VRTour';
-import ContactForm from './components/ContactForm/ContactForm';
+import Home from './pages/Home';
+import UnitPage from './pages/Unit/UnitPage';
 import Loader from './components/Loader/Loader';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    // старт лоадера при зміні маршруту
+    setIsLoading(true);
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // імітація завантаження
+    }, 600); // імітація завантаження
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [location.pathname]);
 
   return (
     <>
@@ -25,12 +25,10 @@ function App() {
 
       {!isLoading && (
         <>
-          <VideoHero />
-          <Genplan />
-          <AboutLocation />
-          <Gallery />
-          <VRTour />
-          <ContactForm />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/unit/:id' element={<UnitPage />} />
+          </Routes>
         </>
       )}
     </>
