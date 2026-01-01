@@ -9,7 +9,8 @@ const UnitHero = () => {
       <div className='container'>
         <section className={styles.hero}>
           <img
-            src={`/richmond/src/assets/gallery/units/${id}.jpg`}
+            // src={`/richmond/gallery/units/${id}.jpg`}
+            src={`/gallery/units/${id}.jpg`}
             alt={`Unit ${id}`}
             className={styles.image}
           />

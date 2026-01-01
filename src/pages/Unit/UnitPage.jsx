@@ -4,14 +4,16 @@ import UnitStats from './UnitStats/UnitStats';
 import UnitHero from './UnitHero/UnitHero';
 import VRTour from '../../components/VRTour/VRTour';
 import ContactForm from '../../components/ContactForm/ContactForm';
-import Gallery from '../../components/Gallery/Gallery';
+import UnitGallery from '../../components/UnitGallery/UnitGallery';
+import UnitFloors from '../../components/UnitFloors/UnitFloors';
 
 const UnitPage = () => {
   return (
     <>
       <UnitHero />
       <UnitStats />
-      <Gallery />
+      <UnitFloors />
+      <UnitGallery />
       <VRTour />
       <ContactForm />
     </>

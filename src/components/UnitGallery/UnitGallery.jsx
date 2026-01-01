@@ -1,59 +1,66 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Thumbs, Autoplay } from 'swiper/modules';
+import { useParams } from 'react-router-dom';
+import data from '../../assets/data.json';
+import { loadGallery } from '../../hooks/loadGallery';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
-import styles from './Gallery.module.css';
+import styles from './UnitGallery.module.css';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
-// const images = ['/richmond/gallery/1.jpg', '/richmond/gallery/2.jpg'];
-const images = ['/gallery/1.jpg', '/gallery/2.jpg'];
+const UnitGallery = () => {
+  const { id } = useParams();
+  const unit = data.find((item) => item.id === Number(id));
 
-const Gallery = () => {
+  const images = useMemo(() => {
+    return loadGallery('u' + unit.id);
+  }, [unit]);
+
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [ref, isVisible] = useScrollAnimation();
+
+  if (!images.length) return null;
 
   return (
     <section
       ref={ref}
-      className={`section fromRight ${isVisible ? 'visible' : ''}`}
+      className={`section fromLeft ${isVisible ? 'visible' : ''}`}
     >
       <div className='container'>
         <h2 className='section-title'>Gallery</h2>
-        {/* MAIN IMAGE */}
+
+        {/* MAIN */}
         <Swiper
           modules={[Navigation, Thumbs, Autoplay]}
           navigation
-          loop={true}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
+          loop
+          autoplay={{ delay: 3000 }}
           thumbs={{ swiper: thumbsSwiper }}
           className={styles.mainSlider}
         >
           {images.map((img, i) => (
             <SwiperSlide key={i}>
-              <img src={img} alt='' />
+              <img src={img} alt={`Gallery ${i + 1}`} />
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* THUMBNAILS */}
+        {/* THUMBS */}
         <Swiper
           modules={[Thumbs]}
           onSwiper={setThumbsSwiper}
-          slidesPerView={2}
+          slidesPerView={5}
           spaceBetween={12}
-          loop={true}
+          loop
           className={styles.thumbs}
         >
           {images.map((img, i) => (
             <SwiperSlide key={i}>
-              <img src={img} alt='' />
+              <img src={img} alt={`Thumb ${i + 1}`} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -62,4 +69,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default UnitGallery;
